@@ -11,12 +11,12 @@ $(document).ready(function () {
       url: "/run-fifo",
       method: "POST",
       contentType: "application/json",
-      data: JSON.stringify({ capacity: capacity, pages: pages }),
+      data: JSON.stringify({ capacity: parseInt(capacity), pages: pages }),
       success: function (data) {
-        displayCacheTable(data.cache);
+        displayCacheTable(data.cacheStates);
         displayHitsAndMisses(data.hits, data.misses);
       },
-      error: function (xhr, status, error) {
+      error: function (error) {
         console.error("Error:", error);
       },
     });
