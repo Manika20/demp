@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
 
-const indexRouter = require("./routes/index");
+const indexRouter = require("./api/index");
 app.use("/", indexRouter);
 
 app.listen(5000, () => {
